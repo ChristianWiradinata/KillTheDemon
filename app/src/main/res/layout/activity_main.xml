@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hwads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/black">
+
+    <!--Adding BannerView Through XML-->
+
+    <FrameLayout
+        android:id="@+id/ad_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="@+id/hw_banner_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hw_banner_view" />
+
+
+    <com.huawei.hms.ads.banner.BannerView
+        android:id="@+id/hw_banner_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        hwads:adId="testw6vs28auh3"
+        hwads:bannerSize="BANNER_SIZE_320_50" />
 
     <com.huawei.hms.support.hwid.ui.HuaweiIdAuthButton
         android:id="@+id/HuaweiIdAuthButton"

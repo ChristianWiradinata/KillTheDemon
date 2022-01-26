@@ -8,11 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.huawei.hms.ads.AdParam;
-import com.huawei.hms.ads.BannerAdSize;
-import com.huawei.hms.ads.HwAds;
-import com.huawei.hms.ads.banner.BannerView;
-
 import java.util.Random;
 
 public class duel extends AppCompatActivity {
@@ -37,14 +32,6 @@ public class duel extends AppCompatActivity {
 
         heroName.setText("Hero " + HeroName + " - " + heroHealth);
         demonHealth.setText("" + DemonHealth);
-
-        HwAds.init(this);
-
-        BannerView bannerView = findViewById(R.id.hw_banner_view);
-        bannerView.setAdId("test6vs28auh3");
-        bannerView.setBannerAdSize(BannerAdSize.BANNER_SIZE_360_57);
-        AdParam adParam = new AdParam.Builder().build();
-        bannerView.loadAd(adParam);
 
         findViewById(R.id.btnScissor).setOnClickListener(new View.OnClickListener() {
             @Override
