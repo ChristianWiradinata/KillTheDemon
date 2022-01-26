@@ -16,15 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.huawei.hms.ads.banner.BannerView
-            android:id="@+id/hw_banner_view"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            hwads:adId="testw6vs28auh3"
-            hwads:bannerSize="BANNER_SIZE_360_57" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"

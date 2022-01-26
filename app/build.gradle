@@ -36,10 +36,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
     implementation 'com.huawei.hms:hwid:5.2.0.300'
-    implementation 'com.huawei.hms:ads:3.4.51.300'
-    implementation 'com.huawei.hms:ads-lite:13.4.51.300'
-    implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
-    implementation 'com.huawei.hms:ads-installreferrer:3.4.39.302'
-    implementation 'com.huawei.hms:ads-consent:3.4.51.300'
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
