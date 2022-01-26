@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.huawei.hmf.tasks.OnFailureListener;
 import com.huawei.hmf.tasks.OnSuccessListener;
@@ -16,19 +17,12 @@ import com.huawei.hms.support.account.request.AccountAuthParams;
 import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
 import com.huawei.hms.support.account.result.AuthAccount;
 import com.huawei.hms.support.account.service.AccountAuthService;
-import com.huawei.hms.support.api.entity.common.CommonConstant;
 
 public class MainActivity extends AppCompatActivity {
 
     private AccountAuthService mAuthService;
-
-    // Specify the user information to be obtained after user authorization.
     private AccountAuthParams mAuthParam;
-
-    // Define the request code for signInIntent.
     private static final int REQUEST_CODE_SIGN_IN = 1000;
-
-    // Define the log flag.
     private static final String TAG = "Account";
 
     @Override
@@ -73,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void dealWithResultOfSignIn(AuthAccount authAccount) {
-        Log.i(TAG,"code: getAuthorizationCode: -> "+authAccount.getAvatarUri());
-        Log.i(TAG,"code: getAvatarUri: -> "+authAccount.getAuthorizationCode());
-        Log.i(TAG,"code: getDisplayName: -> "+authAccount.getDisplayName());
-        Log.i(TAG,"code: getEmail: -> "+authAccount.getEmail());
+        Toast.makeText(this, "code: getDisplayName: -> "+authAccount.getDisplayName(), Toast.LENGTH_LONG).show();
+        String username = authAccount.getDisplayName();
+        Intent gotoDuel = new Intent(this, duel.class);
+        gotoDuel.putExtra("name", username);
+        startActivity(gotoDuel);
     }
 
     @Override
